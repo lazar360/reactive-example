@@ -40,6 +40,13 @@ public class Exercise1 {
                 .map(User::getFirstName)
                 .forEach(System.out::println);
 
+        // Print first names in userStream for users that have Ids from numberStream
+        System.out.println("Print first names in userStream for users that have Ids from numberStream 2 ");
+        StreamSources.userStream()
+                .filter(user -> StreamSources.intNumbersStream().anyMatch(i -> i == user.getId()))
+                .map(User::getFirstName)
+                .forEach(System.out::println);
+
 
 
 
